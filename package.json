@@ -1,0 +1,13 @@
+{
+  "name": "virtual-ui",
+  "private": true,
+  "description": "Virtual UI monorepo — run client and server locally",
+  "scripts": {
+    "install:all": "npm install --prefix virtual-ui-server && npm install --prefix virtual-ui-client && npm install --prefix virtual-ui-lib",
+    "build:lib": "npm run build --prefix virtual-ui-lib",
+    "seed": "npm run seed --prefix virtual-ui-server",
+    "setup": "npm run install:all && npm run build:lib && npm run seed",
+    "dev:server": "npm run dev --prefix virtual-ui-server",
+    "dev:client": "npm run dev --prefix virtual-ui-client"
+  }
+}
