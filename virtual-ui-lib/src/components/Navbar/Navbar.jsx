@@ -160,9 +160,13 @@ export const Navbar = ({
             {/* Hamburger — mobile only */}
             {isMobile && (
               <button
-                className="nb-ham"
-                onClick={() => setMenuOpen((o) => !o)}
-                style={{
+                 type="button"
+              className="nb-ham"
+               aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                 aria-expanded={menuOpen}
+                aria-controls="mobile-navigation"
+                 onClick={() => setMenuOpen((o) => !o)}
+                  style={{ 
                   background: "rgba(255,255,255,0.06)",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: "8px",
@@ -198,7 +202,9 @@ export const Navbar = ({
 
         {/* ── Mobile dropdown ── */}
         {isMobile && menuOpen && (
-          <div style={{
+          <div 
+               id="mobile-navigation"
+          style={{
             animation: "nbSlideDown 0.2s ease",
             borderTop: "1px solid rgba(255,255,255,0.06)",
             padding: "10px 16px 16px",
